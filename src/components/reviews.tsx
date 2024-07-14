@@ -7,11 +7,12 @@ import React, {
   useRef,
   useState,
 } from "react";
-import MaxWidthWrapper from "./max-width-wrapper";
 import Image from "next/image";
 import { useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
+
 import Phone from "./phone";
+import MaxWidthWrapper from "./max-width-wrapper";
 
 const PHONES = [
   "/testimonials/1.jpg",
@@ -143,23 +144,19 @@ function ReviewGrid() {
           />
           <ReviewColumn
             reviews={[...columns2, ...columns3[1]]}
+            className="hidden md:block"
             reviewClassName={(reviewIndex) =>
-              cn({
-                "md:hidden":
-                  reviewIndex >= columns1.length + columns3[0].length,
-                "lg:hidden": reviewIndex >= columns1.length,
-              })
+              reviewIndex >= columns2.length ? "lg:hidden" : ""
             }
             msPerPixel={15}
           />
           <ReviewColumn
             reviews={columns3.flat()}
             className="hidden md:block"
-            reviewClassName={(reviewIndex) =>
-              reviewIndex >= columns2.length ? "lg:hidden" : ""
-            }
             msPerPixel={10}
           />
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-slate-100" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-100" />
         </>
       )}
     </div>
@@ -168,13 +165,13 @@ function ReviewGrid() {
 
 const Reviews = () => {
   return (
-    <MaxWidthWrapper className="relative max-w-5xl overflow-hidden">
+    <MaxWidthWrapper className="relative max-w-5xl xl:overflow-visible overflow-hidden">
       <Image
         src="/what-people-are-buying.png"
-        alt="Image gallery"
+        alt="Image pointer"
         aria-hidden={true}
-        width={100}
-        height={100}
+        width={200}
+        height={150}
         className="absolute select-none hidden xl:block top-1/3 -left-32"
       />
 
