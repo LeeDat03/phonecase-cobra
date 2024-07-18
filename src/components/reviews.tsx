@@ -166,7 +166,7 @@ function ReviewGrid() {
 const Reviews = () => {
   return (
     <MaxWidthWrapper className="relative max-w-5xl xl:overflow-visible overflow-hidden">
-      <Image
+      <img
         src="/what-people-are-buying.png"
         alt="Image pointer"
         aria-hidden={true}

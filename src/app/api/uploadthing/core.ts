@@ -14,12 +14,11 @@ export const ourFileRouter = {
     .onUploadComplete(async ({ metadata, file }) => {
       const { configId } = metadata.input;
 
-      console.log(file);
       const res = await fetch(file.url);
       const buffer = await res.arrayBuffer();
 
-      const imageMetadata = await sharp(buffer).metadata();
-      const { width, height } = imageMetadata;
+      const imgMetadata = await sharp(buffer).metadata();
+      const { width, height } = imgMetadata;
 
       if (!configId) {
         const configuration = await db.configuration.create({
@@ -29,6 +28,7 @@ export const ourFileRouter = {
             width: width || 500,
           },
         });
+
         return { configId: configuration.id };
       } else {
         // when user cropped image

@@ -60,35 +60,35 @@ export default function Home() {
               <div className="mt-12 flex flex-col sm:flex-row items-center sm:items-start gap-5">
                 {/* USER IMAGE */}
                 <div className="flex -space-x-4">
-                  <Image
+                  <img
                     src="/user/user-1.png"
                     alt="User Image"
                     width={40}
                     height={40}
                     className="inline-block h-10 w-10 rounded-full ring-2 ring-slate-100"
                   />
-                  <Image
+                  <img
                     src="/user/user-2.png"
                     alt="User Image"
                     width={40}
                     height={40}
                     className="inline-block h-10 w-10 rounded-full ring-2 ring-slate-100"
                   />
-                  <Image
+                  <img
                     src="/user/user-3.png"
                     alt="User Image"
                     width={40}
                     height={40}
                     className="inline-block h-10 w-10 rounded-full ring-2 ring-slate-100"
                   />
-                  <Image
+                  <img
                     src="/user/user-4.jpg"
                     alt="User Image"
                     width={40}
                     height={40}
                     className="inline-block h-10 w-10 rounded-full ring-2 ring-slate-100"
                   />
-                  <Image
+                  <img
                     src="/user/user-5.jpg"
                     alt="User Image"
                     width={40}

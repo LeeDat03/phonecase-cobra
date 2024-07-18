@@ -1,3 +1,5 @@
+export const runtime = "nodejs";
+
 import { OurFileRouter } from "@/app/api/uploadthing/core";
 import { generateReactHelpers } from "@uploadthing/react";
 
